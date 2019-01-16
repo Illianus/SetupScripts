@@ -18,7 +18,10 @@ function Add-Basics {
         "gradle",
         "phpstorm",
         "webstorm",
-        "pycharm"
+        "pycharm",
+        "androidstudio",
+        "atom",
+        "openjdk"
     }|%{ 
         Write-Host "Installing $_" -ForegroundColor Yellow
         choco install $_ -y 
@@ -56,6 +59,7 @@ function Setup-System {
     Add-Basics
     Add-Python
     Add-Scripts
+    Add-Git-Config
 }
 
 Setup-System
