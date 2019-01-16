@@ -20,7 +20,8 @@ function Add-Basics {
         "webstorm",
         "pycharm",
         "androidstudio",
-        "atom"
+        "atom",
+        "openjdk"
     }|%{ 
         Write-Host "Installing $_" -ForegroundColor Yellow
         choco install $_ -y 
