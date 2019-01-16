@@ -11,7 +11,7 @@ function Add-Chocolatey {
 }
 
 function Add-Basics {
-    {
+    @(
         "Dropbox",
         "Chrome",
         "intellijidea-ultimate",
@@ -22,7 +22,7 @@ function Add-Basics {
         "androidstudio",
         "atom",
         "openjdk"
-    }|%{ 
+    )|%{ 
         Write-Host "Installing $_" -ForegroundColor Yellow
         choco install $_ -y 
     }
@@ -35,7 +35,7 @@ function Add-Python {
     RefreshEnv
     Write-Host "Updating pip" -ForegroundColor Yellow
     python -m pip install --upgrade pip
-    "pandas","numpy","scipy","matplotlib","jupyter"|%{
+    @("pandas","numpy","scipy","matplotlib","jupyter")|%{
         Write-Host "Installing $_" -ForegroundColor Yellow
         pip install $_
     }
@@ -45,13 +45,13 @@ function Add-Python {
 }
 
 function Add-Scripts {
-    {
+    @(
         "CommonDevTools.ps1",
         "Docker.ps1",
         "HyperV.ps1",
         "RemoveDefaultApps.ps1",
         "SystemConfiguration.ps1"
-    }|%{Run-Script $_}
+    )|%{Run-Script $_}
 }
 
 function Setup-System {
