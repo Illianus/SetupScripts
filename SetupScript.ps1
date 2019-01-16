@@ -13,7 +13,7 @@ function Add-Chocolatey {
 function Add-Basics {
     @(
         "Dropbox",
-        "Chrome",
+        "googlechrome",
         "intellijidea-ultimate",
         "gradle",
         "phpstorm",
