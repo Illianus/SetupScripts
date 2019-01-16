@@ -7,7 +7,7 @@
 
 function Add-Chocolatey {
     Write-Host "Installing Chocolatey" -ForegroundColor Yellow
-    Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+    iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 }
 
 function Add-Basics {
@@ -47,8 +47,7 @@ function Add-Scripts {
         "Docker.ps1",
         "HyperV.ps1",
         "RemoveDefaultApps.ps1",
-        "SystemConfiguration.ps1",
-        "WSL.ps1"
+        "SystemConfiguration.ps1"
     }|%{Run-Script $_}
 }
 
