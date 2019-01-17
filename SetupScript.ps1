@@ -63,7 +63,6 @@ function Setup-System {
     Add-Basics
     Add-Python
     Add-Scripts
-    Add-Git-Config
 }
 
 Setup-System
