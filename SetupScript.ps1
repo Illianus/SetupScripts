@@ -21,7 +21,9 @@ function Add-Basics {
         "pycharm",
         "androidstudio",
         "atom",
-        "openjdk"
+        "openjdk",
+        "gitkraken",
+        "mysql"
     )|%{ 
         Write-Host "Installing $_" -ForegroundColor Yellow -BackgroundColor Blue
         choco install $_ -y 
