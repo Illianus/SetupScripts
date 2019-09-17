@@ -1,9 +1,8 @@
-﻿function Run-Script {
+function Run-Script {
     Param([String]$script, $baseUri="https://raw.githubusercontent.com/Microsoft/windows-dev-box-setup-scripts/master/scripts/")
     Write-Host "Installing script from $baseUri$script" -ForegroundColor Yellow -BackgroundColor Blue
     iex ((New-Object net.webclient).DownloadString("$baseUri$script"))
 }
-
 
 function Add-Chocolatey {
     Write-Host "Installing Chocolatey" -ForegroundColor Yellow -BackgroundColor Blue
@@ -32,6 +31,9 @@ function Add-Basics {
 }
 
 function Add-Python {
+    Write-Host "Installing Visual C++ Redist" -ForegroundColor Yellow -BackgroundColor Blue
+    choco install -y vcredist2015
+    RefreshEnv
     Write-Host "Installing Python" -ForegroundColor Yellow -BackgroundColor Blue
     choco install python -y
     RefreshEnv
@@ -41,9 +43,6 @@ function Add-Python {
         Write-Host "Installing $_" -ForegroundColor Yellow
         pip install $_
     }
-    RefreshEnv
-    Write-Host "Installing Visual C++ Redist" -ForegroundColor Yellow -BackgroundColor Blue
-    choco install -y vcredist2015
     RefreshEnv
 }
 
