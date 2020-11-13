@@ -17,7 +17,7 @@ function Format-Media {
 
 function Setup-NUC {
     param(
-        [Parameter(Mandatory=true)]
+        [Parameter(Mandatory=$true)]
         [String]
         $SystemName
     )
