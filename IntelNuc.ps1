@@ -26,3 +26,5 @@ function Setup-NUC {
     Format-Media
     Restart-Computer
 }
+
+Setup-NUC
